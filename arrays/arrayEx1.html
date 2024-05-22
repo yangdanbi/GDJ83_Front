@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" value="1" name="ch" id="ca" onclick="all1()">
+    <input type="checkbox" value="1" name="ch" class="ch">
+    <input type="checkbox" value="2" name="ch" class="ch">
+    <input type="checkbox" value="3" name="ch" class="ch">
+    <input type="checkbox" value="4" name="ch" class="ch">
+    <button id="btn" onclick="check()">CLICK</button>
+
+    <script>
+        //체크올을 누르면 나머지도 다true 
+        const ch = document.getElementsByClassName("ch");
+        console.log(ch);
+        let ca = document.getElementById("ca");
+        function check() {
+            for (let i = 0; i < ch.length; i++) {
+                //console.log(ch[i].checked);
+            }
+        }
+        function all1() {
+            console.log(ca.checked);
+            if (ca.checked == true) {
+                for (let i = 0; i < ch.length; i++) {
+                    ch[i].checked = true;
+                }
+            } else {
+                for (let i = 0; i < ch.length; i++) {
+                    ch[i].checked = false;
+                }
+                //ch.checked = false;
+            }
+
+        }
+
+        //ch[1].checked=false;
+
+
+    </script>
+
+</body>
+
+</html>

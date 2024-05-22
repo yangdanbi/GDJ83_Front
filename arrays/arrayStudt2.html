@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="c">
+    <input type="text" class="c">
+    <input type="text" class="c">
+    <button id="btn" onclick="info()">CLICK</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+        //btn.value;
+        const c = document.getElementsByClassName("c");//변수에는 하나만 담을 수 있어서 유사배열로 저장
+        //c.value;
+
+        function info() {
+            for (let i = 0; i < c.length; i++) {
+                console.log(c[i].value);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

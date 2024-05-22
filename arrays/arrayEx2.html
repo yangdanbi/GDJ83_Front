@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img id=img src="/images/pu1.jpg">;
+    </div>
+    <button onclick="change()">Next</button>
+
+    <script>
+        let i = 1;
+        let ar = ["pu1.jpg", "pu2.jpg", "pu3.jpg", "pu4.jpg", "pu5.jpg"];
+        let img = document.getElementById("img");
+        function change() {
+            let u = (img.src);
+
+            // for(let i=0;i<ar.length;i++){
+            u = "/images/" + ar[i];
+            i++;
+
+            img.src = u;
+
+            // img.src=u;
+            //console.log(u);
+            console.log(ar[i]);
+            if (i > 4) {
+                i = 0;
+            }
+
+        }
+
+
+
+
+        // }
+
+    </script>
+</body>
+
+</html>
