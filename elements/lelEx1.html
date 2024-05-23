@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* div{
+            text-decoration: line-through;
+        } */
+
+    </style>
 </head>
 
 <body>
@@ -16,18 +22,23 @@
     </div>
     <script>
         const ar = ["바나나", "수박", "참외", "사과", "망고"];
+        const result = document.getElementById("result");
 
         for (let j = 0; j < ar.length; j++) {
-            let a = document.createAttribute("type");
-            let i = document.createElement("input");
+            //div
             let d = document.createElement("div");
+            //input checkbox
+            let i = document.createElement("input");
+            i.type = "checkbox";
+            // let a = document.createAttribute("type");
+            // a.value = "checkbox";
             let t = document.createTextNode(ar[j]);
-            a.value = "checkbox";
             //console.log(t);
 
-            i.setAttributeNode(a);
+            //i.setAttributeNode(a);
             d.appendChild(i);
-            d.append(t);
+            // d.append(t);
+            d.append(ar[j]);
             result.append(d);
         }
         //<div><input></div>
