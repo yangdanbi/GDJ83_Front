@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .c2 {
+        /* width: 100px;
+        height: 100px; */
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <input type="text" class="c1">
+    </div>
+    <div>
+        <button onclick="result()">CLICK</button>
+    </div>
+    <script>
+
+        let c1 = document.getElementsByClassName("c1");
+        // 버튼을 클릭했을때 input요소에 값이 비어있으면 빨간 테두리
+        // 값이 있다면 원래대로  
+        //console.log(c1);
+        function result() {
+            //console.log("test");
+            console.log(c1[0].value);
+
+            for (let i = 0; i < c1.length; i++) {
+                if (c1[i].value == "") {
+                    //값이 비어있다.
+                    c1[i].classList.add("c2"); //비어있으면 c2추가
+                    //console.log(i);
+                } else {
+                    c1[i].classList.remove("c2");//아니면 c2뺴기
+                }
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
