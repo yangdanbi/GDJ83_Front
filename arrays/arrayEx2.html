@@ -15,30 +15,35 @@
 
     <script>
         let i = 1;
-        let ar = ["pu1.jpg", "pu2.jpg", "pu3.jpg", "pu4.jpg", "pu5.jpg"];
         let img = document.getElementById("img");
-        function change() {
-            let u = (img.src);
+        let ar = ["pu1.jpg", "pu2.jpg", "pu3.jpg", "pu4.jpg", "pu5.jpg"];
+        // function change() {
+        //     let u = (img.src);
 
-            // for(let i=0;i<ar.length;i++){
-            u = "/images/" + ar[i];
-            i++;
+        //     // for(let i=0;i<ar.length;i++){
+        //     u = "/images/" + ar[i];
+        //     i++;
+        //     img.src = u;
 
-            img.src = u;
-
-            // img.src=u;
-            //console.log(u);
-            console.log(ar[i]);
-            if (i > 4) {
-                i = 0;
-            }
-
-        }
-
-
-
+        //     // img.src=u;
+        //     //console.log(u);
+        //     console.log(ar[i]);
+        //     if (i > 4) {
+        //         i = 0;
+        //     }
 
         // }
+        //강사님
+
+        function change() {
+            if(i>4){
+                alert("마지막 이미지");
+                i=0;
+            }
+            img.src ="/images/" + ar[i];
+            i++;
+
+        }
 
     </script>
 </body>

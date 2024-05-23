@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <input type="checkbox" value="1" name="ch" id="ca" onclick="all1()">
+    <input type="checkbox" value="1" name="ch" id="all" onclick="check()">
     <input type="checkbox" value="1" name="ch" class="ch">
     <input type="checkbox" value="2" name="ch" class="ch">
     <input type="checkbox" value="3" name="ch" class="ch">
@@ -17,30 +17,55 @@
 
     <script>
         //체크올을 누르면 나머지도 다true 
-        const ch = document.getElementsByClassName("ch");
+        const ch = document.getElementsByClassName("ch");//input을 담고있는 배열
         console.log(ch);
-        let ca = document.getElementById("ca");
-        function check() {
-            for (let i = 0; i < ch.length; i++) {
-                //console.log(ch[i].checked);
-            }
-        }
-        function all1() {
-            console.log(ca.checked);
-            if (ca.checked == true) {
-                for (let i = 0; i < ch.length; i++) {
-                    ch[i].checked = true;
-                }
-            } else {
-                for (let i = 0; i < ch.length; i++) {
-                    ch[i].checked = false;
-                }
-                //ch.checked = false;
-            }
+        let all = document.getElementById("all");
+        // function check() {
+        //     for (let i = 0; i < ch.length; i++) {
+        //         //console.log(ch[i].checked);
+        //     }
+        // }
+        // function all1() {
+        //     console.log(all.checked);
+        //     if (all.checked == true) {
+        //         for (let i = 0; i < ch.length; i++) {
+        //             ch[i].checked = true;
+        //         }
+        //     } else {
+        //         for (let i = 0; i < ch.length; i++) {
+        //             ch[i].checked = false;
+        //         }
+        //         //ch.checked = false;
+        //     }
 
-        }
+        // }
 
         //ch[1].checked=false;
+        // 강사님
+
+        function check() {
+            for (let i = 0; i < ch.length; i++) {
+                    ch[i].checked = all.checked;
+                    //console.log(ch[i].checked);
+                }
+
+            }
+            // for문이 둘다 똑같이 중복되기 때문에 줄일 수 있음
+            // 체크가 됐다면 true, 아니면 false니까 if문도 사용하지 않아도 가능
+            // if (all.checked) {
+            //     for (let i = 0; i < ch.length; i++) {
+            //         ch[i].checked = all.checked;
+            //         //console.log(ch[i].checked);
+            //     }
+            // }else{
+            //     for (let i = 0; i < ch.length; i++) {
+            //         ch[i].checked = all.checked;
+            //         //console.log(ch[i].checked);
+            //     }
+            // }
+        // }
+
+
 
 
     </script>
