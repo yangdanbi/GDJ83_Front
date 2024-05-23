@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id = result></div>
+    <button id="btn1">CLICK</button>
+    <!-- <button id="btn2">BUTTON</button> -->
+
+    <button class="b1" title="btn1">BTN1</button>
+    <button class="b1" title="btn2">BTN2</button>
+    <button class="b1" title="btn3">BTN3</button>
+
+    <script>
+        const btn1 = document.getElementById("btn1");
+        const btn2 = document.getElementById("btn2");
+        const result = document.getElementById("result");
+
+        const b1 = document.getElementsByClassName("b1"); //배열
+        //배열엔 이벤트x
+        for(let i=0;i<=b1.length;i++){
+            b1[i].addEventListener("click", function(){
+                //console.log(b1[i].title);
+                console.log(this.title);//클릭한 자기자신
+            });
+
+        }
+
+        btn1.addEventListener("click", function () {
+            result.innerHTML=' <button id="btn2">click</button>'
+            // console.log("click");
+        })
+        //btn2버튼을 누르면 btn1을 누르도록 강제실행
+        //서버랑 연결했을때 필요한 이벤트
+        btn2.addEventListener("click",function(){
+            //btn1.click();
+            console.log("test");
+        })  
+ 
+
+    </script>
+
+</body>
+
+</html>

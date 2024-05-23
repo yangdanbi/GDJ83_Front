@@ -16,6 +16,8 @@
     <button id="btn" onclick="check()">CLICK</button>
 
     <script>
+        //첫번째를 가져와서 flase면 뒤에 검증할 필요 x , true면 계속 검증
+
         //체크올을 누르면 나머지도 다true 
         const ch = document.getElementsByClassName("ch");//input을 담고있는 배열
         console.log(ch);
@@ -45,24 +47,31 @@
 
         function check() {
             for (let i = 0; i < ch.length; i++) {
-                    ch[i].checked = all.checked;
-                    //console.log(ch[i].checked);
-                }
-
+                ch[i].checked = all.checked;
+                console.log(ch[i].checked);
             }
-            // for문이 둘다 똑같이 중복되기 때문에 줄일 수 있음
-            // 체크가 됐다면 true, 아니면 false니까 if문도 사용하지 않아도 가능
-            // if (all.checked) {
-            //     for (let i = 0; i < ch.length; i++) {
-            //         ch[i].checked = all.checked;
-            //         //console.log(ch[i].checked);
-            //     }
-            // }else{
-            //     for (let i = 0; i < ch.length; i++) {
-            //         ch[i].checked = all.checked;
-            //         //console.log(ch[i].checked);
-            //     }
-            // }
+
+            for (let i = 0; i < ch.length; i++) {
+                ch[i].addEventListener("click", function () {
+                    if (ch[i].checked) {
+                        console.log(ch[i].checked);
+                    }
+                })
+            }
+        }
+        // for문이 둘다 똑같이 중복되기 때문에 줄일 수 있음
+        // 체크가 됐다면 true, 아니면 false니까 if문도 사용하지 않아도 가능
+        // if (all.checked) {
+        //     for (let i = 0; i < ch.length; i++) {
+        //         ch[i].checked = all.checked;
+        //         //console.log(ch[i].checked);
+        //     }
+        // }else{
+        //     for (let i = 0; i < ch.length; i++) {
+        //         ch[i].checked = all.checked;
+        //         //console.log(ch[i].checked);
+        //     }
+        // }
         // }
 
 

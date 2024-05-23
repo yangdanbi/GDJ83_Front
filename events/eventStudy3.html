@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+<!-- reset이라는 이벤트는 내장이벤트
+input이랑 reset태그는 form밖에 놓으면 작동x 그냥 버튼이 됨 -->
+    <form id="frm" >
+        <input type="text" id="id1">
+        <input type="text" id="id2">
+        <input type="reset" value="RESET" > 
+    </form>
+
+    <script>
+        //키 이벤트
+        const id1 = document.getElementById("id1");
+        const id2 = document.getElementById("id2");
+
+        //keypress - 키보드를 입력했을때 
+        id1.addEventListener("keypress", function () {
+            console.log("keypress");
+        }
+        )
+        //keydown - keypress가 안해주는 특수키 반영
+        id1.addEventListener("keydown", function () {
+            console.log("keydown");
+        }
+        )
+        //키를 눌렀다 떼면 반응
+        id1.addEventListener("keyup", function () {
+            console.log("keyup");
+        }
+        )
+        //마우스 눌렀을때
+        id1.addEventListener("focus", function () {
+            id1.classList.add("bg");
+        })
+        //마우스 뗏을때 포커스가 나갈때
+        id1.addEventListener("blur", function () {
+            id1.classList.remove("bg");
+
+        })
+        //값이 바뀌면 실행 치다가 다시 원래대로 지우면 작동x
+        id2.addEventListener("change", function () {
+            console.log("값이 변경됨")
+        })
+
+
+
+    </script>
+</body>
+
+</html>
