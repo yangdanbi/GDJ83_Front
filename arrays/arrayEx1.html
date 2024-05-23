@@ -22,6 +22,9 @@
         const ch = document.getElementsByClassName("ch");//input을 담고있는 배열
         console.log(ch);
         let all = document.getElementById("all");
+
+        const c_cnt= ch.length;
+        const s_cnt  = "";
         // function check() {
         //     for (let i = 0; i < ch.length; i++) {
         //         //console.log(ch[i].checked);
@@ -53,8 +56,8 @@
 
             for (let i = 0; i < ch.length; i++) {
                 ch[i].addEventListener("click", function () {
-                    if (ch[i].checked) {
-                        console.log(ch[i].checked);
+                    if (ch.length==ch.checked) {
+                        console.log(i);
                     }
                 })
             }
