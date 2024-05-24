@@ -44,6 +44,7 @@
     const checkAll = document.getElementById("checkAll");
 
     btn.addEventListener("click", function () {
+        //클릭하면 초기화
         let ar =[];
 
         //삭제할 id명들을 따로 보관
@@ -53,7 +54,7 @@
                 ar.push(flag[i].getAttribute("data-del-num"));//지우지않고 덮어쓰기                
             }
         }
-        //배열 length 가 줄어드는거 
+        //보관된 id를 꺼내서 삭제 
         for(let i=0; i<ar.length;i++){
             document.getElementById(ar[i]).remove();
 
