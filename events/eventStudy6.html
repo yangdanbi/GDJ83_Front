@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="result">
+
+
+    </div>
+    <button id="add">add</button>
+    <a href="https://www.naver.com" id="naver"> 네이버</a>
+
+    <script>
+
+        const add = document.getElementById("add");
+        const result = document.getElementById("result");
+        const naver = document.getElementById("naver");
+
+        naver.addEventListener("click", function(){
+            alert("a");
+        })
+
+        //add를 클릭하면 체크박스 만들기
+        add.addEventListener("click", function () {
+            let i = document.createElement("input");
+            i.type = "checkbox";
+            i.classList.add("ch")//클래스 이름
+
+            result.append(i);
+        })
+        //이 이벤트를 타겟으로 연결
+        result.addEventListener("click", function (e) { //이벤트니까 그냥 e
+            //맞다면 체크박스
+            if (e.target.classList.contains("ch")) {
+                //실행코드
+
+            }
+        })
+       
+
+        //div랑 button만 나와있어서 여기에만 걸수있음..div body에 이벤트 거는건 의미가
+
+    </script>
+</body>
+
+</html>
