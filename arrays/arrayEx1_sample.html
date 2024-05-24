@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onclick="info()" type="checkbox" value="1" id="checkAll" name="ch">
+    <input type="checkbox" value="1" class="ch" name="ch">
+    <input type="checkbox" value="2" class="ch" name="ch">
+    <input type="checkbox" value="3" class="ch" name="ch">
+    <input type="checkbox" value="4" class="ch" name="ch">
+    <button onclick="info()">CLICK</button>
+
+    <script>
+        const ch = document.getElementsByClassName("ch");
+        const checkAll = document.getElementById("checkAll");
+
+
+        //4개의 체크박스에 click 이벤트 설정
+        for(let i=0;i<ch.length;i++){
+            ch[i].addEventListener("click", function(){
+                //최종 결과물을 담을 변수
+                let flag=true;
+
+                //4개의 체크박스의 체크 유무를 판단
+                for(let j=0;j<ch.length;j++){
+                    if(!ch[j].checked){
+                        flag=false;
+                        break;
+                    }
+                }
+
+                //최종 결과물을 checkAll에 대입
+                checkAll.checked=flag;
+                
+            })
+        }
+
+        function info(){
+
+            for(let i=0;i<ch.length;i++){
+                ch[i].checked=checkAll.checked;
+            }
+
+            // if(checkAll.checked){
+
+            //     for(let i=0;i<ch.length;i++){
+            //         ch[i].checked=checkAll.checked;
+            //     }
+            // }else {
+            //     for(let i=0;i<ch.length;i++){
+            //         ch[i].checked=checkAll.checked;
+            //     }
+            // }
+        }
+
+       
+
+    </script>
+
+</body>
+</html>

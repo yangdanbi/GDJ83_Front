@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .bg_red {
+            background-color: red;
+        }
+
+        .bg_blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="del1" class="c1 bg_red">
+        <input type="text">
+    </div>
+
+    <div id="del2" class="c1 bg_blue">
+        <img src="/images/pu1.jpg" id="result">
+    </div>
+
+    <script>
+        //이벤트 걸어주기
+        const del1 = document.getElementById("del1");
+        const del2 = document.getElementById("del2");
+        del1.addEventListener("click", function () {
+            del1.remove(); //엘리먼트 지우기
+
+            //console.log("del1");
+        })
+
+        del2.addEventListener("click", function () {
+            //del2안에 있는 자식 img를 지우겠다
+            //한번쓰고 안써도 될 애들은 변수안쓰고 바로 사용가능
+            del2.removeChild(document.getElementById("result"));
+
+            //console.log("del1");
+        })
+
+    </script>
+</body>
+
+</html>

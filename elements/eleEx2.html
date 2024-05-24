@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" onclick="info()" id="checkAll"> <!-- 전체선택 -->
+        <button id="btn" >delete</button>
+    </div>
+    <div id="result1">
+        <input type="checkbox" class="flag" data-del-num="result1">
+        <span>mail title1</span>
+    </div>
+
+    <div id="result2">
+        <input type="checkbox" class="flag" data-del-num="result2">
+        <span>mail title2</span>
+    </div>
+
+    <div id="result3">
+        <input type="checkbox" class="flag" data-del-num="result3">
+        <span>mail title3</span>
+    </div>
+
+    <div id="result4">
+        <input type="checkbox" class="flag" data-del-num="result4">
+        <span>mail title4</span>
+    </div>
+
+    <div id="result5">
+        <input type="checkbox" class="flag" data-del-num="result5">
+        <span>mail title5</span>
+    </div>
+</body>
+<script>
+    // length 값을 따로 저장
+    const btn = document.getElementById("btn");
+    const flag = document.getElementsByClassName("flag");
+    const checkAll = document.getElementById("checkAll");
+
+    btn.addEventListener("click", function () {
+        let ar =[];
+
+        //삭제할 id명들을 따로 보관
+        for (let i = 0; i < flag.length; i++) {
+            if (flag[i].checked == true) {
+                //document.getElementById(flag[i].getAttribute("data-del-num")).remove();
+                ar.push(flag[i].getAttribute("data-del-num"));//지우지않고 덮어쓰기                
+            }
+        }
+        //배열 length 가 줄어드는거 
+        for(let i=0; i<ar.length;i++){
+            document.getElementById(ar[i]).remove();
+
+        }
+    })
+
+    function info() {
+        //console.log("test");
+        for (let i = 0; i < flag.length; i++) {
+            flag[i].checked = checkAll.checked
+        }
+    }
+
+    // function del1(){
+    //     //console.log("버튼");
+    //     for(let i=0; i<ch.length; i++){
+    //         ch[i].addEventListener("click",function(){
+    //             //console.log(ch[i]);
+    //            // console.log("test");
+    //            if(ch[i].checked== true){
+    //             document.getElementById("result" + this.getAttribute("data-del-num")).remove();
+    //             ch[i].removeChild();
+
+    //            }
+    //         })
+    //          //console.log(ch);
+
+    //     }
+    // }
+
+
+
+
+</script>
+
+</html>

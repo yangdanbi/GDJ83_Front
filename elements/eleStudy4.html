@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 클래스는 div에 걸지않는게 ,, -->
+    <div class="c1" id="result1">
+        <h3>1</h3>
+        <button class="btns" id="1" data-del-num="1" >click</button>
+    </div>
+    <div class="c1" id="result2">
+        <h3>2</h3>
+        <button class="btns" id="2" data-del-num="2" >click</button>
+    </div>
+
+    <div class="c1" id="result3">
+        <h3>3</h3>
+        <button class="btns" id="3" data-del-num="3" >click</button>
+    </div>
+
+    <div class="c1" id="result4">
+        <h3>4</h3>
+        <button class="btns" id="4" data-del-num="4" >click</button>
+    </div>
+
+    <script>
+        //data -* : 속성을 알아서 만든다
+        // const d1 = document.getElementById("d1");
+        // const c1 = document.getElementsByClassName("");
+
+        //하나만 지우기
+        // d1.addEventListener("click", function () {
+        //     d1.remove();
+        //     // d1.removeChild(document.getElementById("c1"));
+
+        // })
+
+        const btns = document.getElementsByClassName("btns");
+        const c1 = document.getElementsByClassName("c1");
+
+        //이벤트를 반복적으로 걸어주는 반복문
+        for (let i = 0; i < btns.length; i++) {
+            //i번째 배열에 이벤트 걸기
+            btns[i].addEventListener("click", function () {
+                //버튼 클릭하면 클릭한 버튼의 엘리먼트가 찍힘
+                //this는 선택된 것 자기 자체
+                //속성값 꺼내오기
+                // console.log(this.data-del-num);
+                console.log(this.getAttribute("data-del-num"));
+                document.getElementById("result" + this.getAttribute("data-del-num")).remove();
+                //console.log(this.id);//선택된 id를 가져오기
+                //document.getElementById("result" + this.id).remove();
+            
+                //패턴ㄴ대로 지워야 다 지워지는 문제
+                //length값을 유지를 해주거나 변경된 값으로 바꿔줘야함.
+                // c1[i].remove();
+
+                console.log("div : " , c1 .length);
+                console.log("button : " , btns .length);
+                console.log("index : " , i);
+            })
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
