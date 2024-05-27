@@ -6,40 +6,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span{
+        /* span{
             text-decoration: line-through;
-        }
-    
+        } */
     </style>
 </head>
 
 <body>
+
     <!-- TO DO LIST-->
     <!-- 체크하면 리스트에 줄 긋기.. 선택해서  -->
 
 
     <div>
         <!-- 할일 적고 버튼을 클릭하면 등록 -->
-        <input type="text">
-        <button>Add</button>
+        <input type="text" id="info">
+        <button id="btn1">Add</button>
     </div>
 
-    <div>
+    <div id="result">
         <div>
             <!-- 클릭하면 체크박스에 체크 된 것들 삭제-->
-            <button>휴지통</button>
+            <button id="btn2">휴지통</button>
         </div>
         <!-- 체크박스에 체크하면 선이 생김 -->
         <!-- 체크박스에 체크 해제하면 선이 사라짐-->
-        <div>
-            <input type="checkbox">
+        <!-- <div class="c1"  id="result1">
+            <input type="checkbox" class="flag" data-del-num="1">
             <span>게임하기</span>
         </div>
-        <div>
-            <input type="checkbox">
+        <div class="c1"  id="result2">
+            <input type="checkbox" class="flag" data-del-num="2">
             <span>밥먹기</span>
-        </div>
+        </div> -->
+
+        <!-- 체크를 했을때 값이 true이면 줄 긋기
+        화면을 그린 후 이벤트를 추가  -->
     </div>
+
+    <script>
+        const btn1 = document.getElementById("btn1");//add
+        const info = document.getElementById("info");
+        const result = document.getElementById("result");
+        const btn2 = document.getElementById("btn2");
+        const c1 = document.getElementsByClassName("c1");
+        let flag = document.getElementsByClassName("flag");
+        // let flag = [];
+
+        //Add누르면 일정 추가
+        let n = 1;
+        btn1.addEventListener("click", function () {
+            let v = info.value;//text 박스에 담기는 값
+            console.log("test");
+
+            let d = document.createElement("div");
+            d.id = "result" + n;
+            d.className = "c1";
+            //<input>
+            let i = document.createElement("input");
+            //속성을 만들기
+            //type = checkbox
+            let a = document.createAttribute("type");
+            a.value = "checkbox";
+            i.classList.add("flag");
+
+            let a2 = document.createAttribute("data-del-num");
+            a2.value = n;
+
+            let s = document.createElement("span");
+            //X
+            let t = document.createTextNode(v);
+
+            //input type ="checkbox"
+            i.setAttributeNode(a);
+            i.setAttributeNode(a2);
+            d.appendChild(i);
+
+            //<span>vlaue </span>
+            s.appendChild(t);
+            d.appendChild(s)
+
+            result.append(d);
+            n++;
+
+
+            //console.log(flag);
+
+            //줄긋기
+            d.addEventListener('click', function () {
+                if (this.firstChild.checked) {
+                    d.style.textDecoration = "line-through";
+                }else{  
+                    d.removeAttribute("style");
+                    
+                }
+                console.log("this.firstChild");
+                console.log(this.firstChild);
+                // console.log("this.children");
+                // console.log(this.children);
+            })
+        })
+
+        //버튼 누르면 삭제
+        btn2.addEventListener("click", function () {
+           
+            let ar = [];
+            //삭제할 id명들을 따로 보관
+            for (let i = 0; i < flag.length; i++) {
+                console.log(flag[i]);
+                if (flag[i].checked == true) {
+                    //document.getElementById(flag[i].getAttribute("data-del-num")).remove();
+                    ar.push(flag[i].getAttribute("data-del-num"));//지우지않고 덮어쓰기                
+                }
+            }
+            //보관된 id를 꺼내서 삭제 
+            for (let i = 0; i < ar.length; i++) {
+                document.getElementById("result" + ar[i]).remove();
+            }
+        })
+
+
+    </script>
 </body>
 
 </html>
