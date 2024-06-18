@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="t1">
+    <button id="btn">CLICK</button>
+    <div id= "result">
+
+    </div>
+
+    <script>
+        const t1 = document.getElementById("t1");
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+        //입력하고 버튼을 클릭하면
+        //글자당 1000원씩 계산
+
+        btn.addEventListener("click", function () {
+        //    ch=chatAt(t1.value);
+        console.log(t1.value.length*1000);
+        result.innerHTML = '<h3>결과값은 ' +  t1.value.length*1000 + '원 입니다. </h3>';
+          
+            // console.log(ch*1000)
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="f1" class="c1">
+    <input type="file" id="f1" class="c1">
+    <input type="file" id="f1" class="c1">
+    <button id="btn">CLICK</button>
+
+    <script>
+        const f1 = document.getElementById("f1");//<input type="file" id = "f1">
+        const c1 = document.getElementsByClassName("c1");//<input type="file" id = "f1">,//<input type="file" id = "f1">,//<input type="file" id = "f1">
+        const btn = document.getElementById("btn");//<button id = "btn">CLICK</button>
+
+        // const files = ["jpg", "png", "gif", "jpeg", "jiff"];
+        //클릭을 하고 확장자를 확인해야하니까
+        btn.addEventListener("click", function () {
+            // let cnt = 0;
+            // let flag = true;
+            for (let i = 0; i < c1.length; i++) {
+                let v = c1[i].value;
+                v = v.substring(v.lastIndexOf(".") + 1);
+                //console.log(v);
+
+                if (v == "jpg" || v== "png" ||  v== "gif" || v== "jpeg" ||  v== "jiff") {
+                    console.log("모두 사진파일입니다.");
+                    break;
+                } else {
+                    console.log("사진파일이 아닙니다.");
+                }
+                // for (let j = 0; j < files.length; j++) {
+                //     console.log(v);
+                //     console.log(files[j]);
+                //     console.log(v == files[j]);
+                //     if (v !== files[j]) {//이미지가 아닐때 콘솔 출력
+                //         // console.log("이미지가 아니다", j);
+                //         // return;
+                //          flag = false;
+                //         // cnt++;
+                //         // break;
+                //     }
+                // }
+            }
+            // if (cnt == c1.length) {
+            //     console.log("전부이미지");
+            // } else {
+            //     console.log("전부 이미지 아님");
+            // }
+
+        })
+
+        // function sing() {
+        //     let v = c1.value;
+
+        //     console.log(v)
+        //     v = v.substring(v.lastIndexOf(".") + 1);
+        //     let flag = false;
+
+        //     for (let i = 0; i < files.length; i++) {
+        //         if (v == files[i]) {
+        //             flag = true;
+        //             break;
+        //         }
+        //     }
+        //     if (flag) {
+        //         console.log("사진파일입니다.");
+        //     } else {
+        //         console.log("사진파일 아닙니다.");
+        //     }
+        // }
+
+
+
+    </script>
+
+</body>
+
+</html>
